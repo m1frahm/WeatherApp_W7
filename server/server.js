@@ -29,9 +29,9 @@ app.get("/api/weather/", (req, res) => {
   //console.log(url);
   fetch(url) // this line fetches data from weather API (url we made above)
     .then((res) => res.json()) //comes back as a response in my server and then converts it to json
-    .then((data) => {
+    .then((data) => { // this line returns the data back
       //console.log(data);
-      res.send({ data });
+      res.send({ data }); //use data and send back to react (client)
     })
     .catch((err) => {
       console.log(err);
