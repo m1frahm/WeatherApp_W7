@@ -28,7 +28,7 @@ app.get("/api/weather/", (req, res) => {
   //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
   //console.log(url);
   fetch(url) // this line fetches data from weather API (url we made above)
-    .then((res) => res.json())
+    .then((res) => res.json()) //comes back as a response in my server and then converts it to json
     .then((data) => {
       //console.log(data);
       res.send({ data });
