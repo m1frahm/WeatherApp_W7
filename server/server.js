@@ -33,7 +33,7 @@ app.get("/api/weather/", (req, res) => {
       //console.log(data);
       res.send({ data }); //use data and send back to react (client)
     })
-    .catch((err) => {
+    .catch((err) => { // .catch is a way to catch error (on a promise)
       console.log(err);
     });
 });
