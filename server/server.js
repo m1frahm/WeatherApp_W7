@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const dataWeather = require("./data")
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const dataWeather = require("./data");
 
 const app = express();
 
@@ -10,13 +10,13 @@ app.use(cors());
 app.use(express.json());
 
 // creates an endpoint for the route /api
-app.get('/', (req, res) => {
-    res.json({ message: 'Hello from My template ExpressJS using and API Key' });
-  });
+app.get("/", (req, res) => {
+  res.json({ message: "Hello from My template ExpressJS using and API Key" });
+});
 
 // creates an endpoint for the route /api/weather
-app.get('/api/weather/', (req, res) => {
-  const city = req.query.cityName;
+app.get("/api/weather/", (req, res) => {
+  const city = req.query.cityName; // cityName could be changed and is simply "q" key in postman
   //console.log(city);
   const apiKey = process.env.API_KEY;
   const params = new URLSearchParams({
@@ -40,5 +40,5 @@ app.get('/api/weather/', (req, res) => {
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-  });
+  console.log(`Server listening on ${PORT}`);
+});
