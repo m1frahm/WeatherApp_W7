@@ -1,6 +1,6 @@
 const coord = {
-    lon: -122.3321,
-    lat: 47.6062,
+    lon: -73.5387,
+    lat: 41.0534
     weather: [{
         id: 803,
         main: "Clouds",
@@ -8,31 +8,31 @@ const coord = {
         icon: "04d",
         base: "stations",
         main: {
-            temp: 79.38,
-            feels_like: 75.74,
-            temp_min: 77.4,
-            pressure: 1000,
-            humidity: 78
+            temp: 5.2,
+            feels_like: 2.68,
+            temp_min: 3.54,
+            pressure: 1016,
+            humidity: 65
             },
         visibility: 10000,
         wind: {
-                speed: 5.66,
-                deg: 200
+                speed: 3.09,
+                deg: 160
             },
         clouds: {
             all: 75
         },
-        dt: 1677006621,
+        dt: 1677693199,
         sys: {
             type: 2,
-            id: 2041694,
+            id: 2010292,
             country: "US",
-            sunrise: 1676991905,
-            sunset: 1677030070
+            sunrise: 1677670142,
+            sunset: 1677710664
             },
-        timezone: -28800,
-        id: 5809844,
-        name: "Seattle",
+        timezone: -18000,
+        id: 4843564,
+        name: "Stamford",
         cod: 200
         }
     ]

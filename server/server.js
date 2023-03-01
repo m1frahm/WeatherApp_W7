@@ -5,16 +5,16 @@ const dataWeather = require("./data");
 
 const app = express();
 
-const PORT = 8085;
+const PORT = 8085; // 8085 is the port for backend
 app.use(cors());
 app.use(express.json());
 
-// creates an endpoint for the route /api
+// creates an endpoint for the route/api
 app.get("/", (req, res) => {
   res.json({ message: "Hello from My template ExpressJS using and API Key" });
 });
 
-// creates an endpoint for the route /api/weather
+// creates an endpoint for the route /api/weather // endpoint is the weather endpoint (this is the invoice)
 app.get("/api/weather/", (req, res) => {
   const city = req.query.cityName; // cityName could be changed and is simply "q" key in postman
   //console.log(city);
