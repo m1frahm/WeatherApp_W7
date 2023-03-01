@@ -10,8 +10,8 @@ const WeatherForm = (props) =>{
   }
 
   const handleSubmit = (ev) => {
-    ev.preventDefault();
-    props.handleSubmit(city);
+    ev.preventDefault(); // preventDefault is so that the form does not reset on its own
+    props.handleSubmit(city); // this passes handleSubmit data from app.js
   }
 
 
