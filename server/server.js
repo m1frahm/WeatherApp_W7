@@ -14,29 +14,31 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello from My template ExpressJS using and API Key" });
 });
 
-// creates an endpoint for the route /api/weather // endpoint is the weather endpoint (this is the invoice)
-app.get("/api/weather/", (req, res) => {
-  const city = req.query.cityName; // cityName could be changed and is simply "q" key in postman
-  //console.log(city);
-  const apiKey = process.env.API_KEY;
-  const params = new URLSearchParams({
-    q: city,
-    appid: apiKey,
-    units: "Metric",
-  });
-  const url = `https://api.openweathermap.org/data/2.5/weather?${params}`; // we only need to use line 27 or 28 - both are same way of showing url
-  //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
-  //console.log(url);
-  fetch(url) // this line fetches data from weather API (url we made above)
-    .then((res) => res.json()) //comes back as a response in my server and then converts it to json
-    .then((data) => { // this line returns the data back
-      //console.log(data);
-      res.send({ data }); //use data and send back to react (client)
-    })
-    .catch((err) => { // .catch is a way to catch error (on a promise)
-      console.log(err);
-    });
-});
+// // creates an endpoint for the route /api/weather // endpoint is the weather endpoint (this is the invoice)
+// app.get("/api/weather/", (req, res) => {
+//   const city = req.query.cityName; // cityName could be changed and is simply "q" key in postman
+//   //console.log(city);
+//   const apiKey = process.env.API_KEY;
+//   const params = new URLSearchParams({
+//     q: city,
+//     appid: apiKey,
+//     units: "Metric",
+//   });
+//   const url = `https://api.openweathermap.org/data/2.5/weather?${params}`; // we only need to use line 27 or 28 - both are same way of showing url
+//   //const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`
+//   //console.log(url);
+//   fetch(url) // this line fetches data from weather API (url we made above)
+//     .then((res) => res.json()) //comes back as a response in my server and then converts it to json
+//     .then((data) => {
+//       // this line returns the data back
+//       //console.log(data);
+//       res.send({ data }); //use data and send back to react (client)
+//     })
+//     .catch((err) => {
+//       // .catch is a way to catch error (on a promise)
+//       console.log(err);
+//     });
+// });
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
