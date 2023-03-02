@@ -12,6 +12,7 @@ const coord = {
         temp: 5.2,
         feels_like: 2.68,
         temp_min: 3.54,
+        temp_max: 7.51,
         pressure: 1016,
         humidity: 65,
       },
