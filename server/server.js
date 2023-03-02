@@ -51,9 +51,9 @@ const coord = {
   ],
 };
 // // creates an endpoint for the route/api
-// app.get("/", (req, res) => {
-//   res.json({ message: "Hello from My template ExpressJS using and API Key" });
-// });
+app.get("/", (req, res) => {
+  res.json({ message: "Hello from My template ExpressJS using and API Key" });
+});
 
 // //copying example from last week with books.js
 // app.get("/weatherhc", (req, res) => {
@@ -78,7 +78,7 @@ app.get("/weatherhc", (req, res) => {
     .then((res) => res.json()) //comes back as a response in my server and then converts it to json
     .then((data) => {
       // this line returns the data back
-      //console.log(data);
+      console.log(data);
       res.send({ data }); //use data and send back to react (client)
     })
     .catch((err) => {

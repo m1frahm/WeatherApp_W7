@@ -15,7 +15,7 @@ function App() {
     fetch(`http://localhost:8085/weatherhc?${params}`)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result); // prints out in browser console
+        console.log(result.data); // prints out in browser console and this tests how it would look like if the data key was removed
         setCity(weatherDataForCity);
         setResult(result);
       });
