@@ -54,6 +54,12 @@ const WeatherCard = (props) => {
             {props.data.data.main.temp_min} <sup>o</sup>C
           </span>
         </p>
+        <p>
+          Temperature Maximum:{" "}
+          <span className="data">
+            {props.data.data.main.temp_max} <sup>o</sup>C
+          </span>
+        </p>
         <p></p>
         <p>
           Feels Like:{" "}
