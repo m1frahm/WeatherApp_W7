@@ -1,34 +1,38 @@
-import './App.css';
+import "./App.css";
 import { useState } from "react";
-import WeatherForm from './components/weatherForm';
-import WeatherCard from './components/weatherCard';
+import WeatherForm from "./components/weatherForm";
+import WeatherCard from "./components/weatherCard";
 
 function App() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(null);
 
   //A function to do the get request and set the state from the hard code data
-  const loadCity = (city) => {
-    const params = new URLSearchParams({ cityName: city });
+  const loadCity = (weatherDataForCity) => {
+    const params = new URLSearchParams({ cityName: weatherDataForCity }); // replicates what happens to the url in postman where ?= comes depending on your key, which in this is cityName
     //console.log(params);
-    fetch(`http://localhost:8085/api/weather?${params}`)
+    // fetch(`http://localhost:8085/api/weather?${params}`)
+    fetch(`http://localhost:8085/weatherhc?${params}`)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result)
-        setCity(city);
+        console.log(result.data); // prints out in browser console and this tests how it would look like if the data key was removed
+        setCity(weatherDataForCity);
         setResult(result);
       });
-  }
+  };
 
- const handleSubmit = (city) =>{
-  loadCity(city);
- }
-
+  const handleSubmit = (weatherDataForCity) => {
+    loadCity(weatherDataForCity);
+  };
 
   return (
     <div className="App">
-      <WeatherForm city={city} handleSubmit={handleSubmit}/>
-      {!result ? <p>Please use the Form to see Real Data</p> : <WeatherCard data={result} /> }
+      <WeatherForm cityInParent={city} handleSubmit={handleSubmit} />
+      {!result ? (
+        <p>Please use the Form to see Real Data</p>
+      ) : (
+        <WeatherCard data={result} /> // pay attention to this line this links back to WC
+      )}
     </div>
   );
 }
